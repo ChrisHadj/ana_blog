@@ -17,9 +17,6 @@ module.exports = {
 
       '2xl': '1400px',
     },
-    fontFamily: {
-      "Crete": ["Crete Round", ...defaultTheme.fontFamily.serif],
-    }
   },
   plugins: [],
 }
