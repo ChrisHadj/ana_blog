@@ -2,8 +2,8 @@ const Header = () => {
 
     return(
         <>
-        <div className="flex content-center justify-center p-[120px]">
-            <h1 className="text-8xl">
+        <div className="flex items-center h-[75vh] sm:mx-[150px] lg:mx-[275px] ">
+            <h1 className="lg:text-6xl sm:text-5xl text-center text-3xl ">
                 This is your website, you&apos;ll hope lkkl write some awesome story
             </h1>
         </div>

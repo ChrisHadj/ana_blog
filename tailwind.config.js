@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         "Crete": "Crete Round",
       },
+      colors: {
+        'main-blue': '#02111ae6',
+      }
     },
     screens: {
       sm: "576px",
