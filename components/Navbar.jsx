@@ -1,14 +1,15 @@
-import { useState, useContext } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-// import {getCategories} from '../services'
+import {getCategories} from '../services'
 
 const Navbar = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  //const [categories, setCategories] = useState([]);
-  const categories = [
-    { name: "React", slug: "react" },
-    { name: "Web dev", slug: "Web-dev" },
-  ];
+  
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then((newCategories) => setCategories(newCategories))
+  }, [])
+  
 
   return (
     <div className="container mx-auto px-10 mb-8">
