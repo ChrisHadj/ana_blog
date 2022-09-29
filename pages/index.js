@@ -1,20 +1,15 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { PostCard, Categories, PostWidget, Header } from "../components";
-import postcss from "postcss";
-import { getPosts } from "../services";
+import { FeaturedPosts } from '../sections/index';
+import { PostCard, Categories, PostWidget } from '../components';
+import { getPosts } from '../services';
 
 export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
-      <Head>
-        <title>Blog baby</title>
-        <link rel="icon" href="/catIcon.png" />
-      </Head>
+      <FeaturedPosts />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post, index) => (
-            <PostCard post={post.node} key={post.title} />
+            <PostCard key={index} post={post.node} />
           ))}
         </div>
         <div className="lg:col-span-4 col-span-1">
@@ -28,9 +23,9 @@ export default function Home({ posts }) {
   );
 }
 
+// Fetch data at build time
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
-
   return {
     props: { posts },
   };
